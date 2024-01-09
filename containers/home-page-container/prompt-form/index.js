@@ -1,16 +1,19 @@
 "use client";
-import { useState } from "react";
 import styles from "./styles.module.scss";
-
+import { useHomePage } from "../useHomepage";
 const PromptForm = () => {
-    const [ prompt, setPrompt ] = useState("");
-    const handleFormSubmit = () => { };
+  const { prompt, setPrompt, generateImage } = useHomePage();
+  
     const handlePromptChange = (event) => {
         setPrompt(event.target.value)
-    }
+  }
+  const handleFormSubmit = (event) => {
+    event.preventDefault()
+    generateImage()
+  }
   return (
     <div className={styles.promptForm}>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleFormSubmit}>
         <textarea
           className={styles.promptTextarea}
           rows={2}

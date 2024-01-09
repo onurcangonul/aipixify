@@ -1,7 +1,11 @@
+'use client'
 import { HomePageContainer } from "@/containers/home-page-container"
+import { HomePageProvider } from "@/containers/home-page-container/useHomepage"
 const HomePage = () => {
   return (
-  <HomePageContainer/>
+    <HomePageProvider>
+      <HomePageContainer />
+    </HomePageProvider>
   )
 }
 
