@@ -1,3 +1,4 @@
+
 const REPLICATE_MODEL_VERSION =
     "f178fa7a1ae43a9a9af01b833b9d2ecf97b1bcb0acfd2dc5dd04895e042863f1";
 
@@ -37,6 +38,7 @@ async function handler(req, res) {
 
     let generatedImage;
 
+    // await new Promise((resolve) => setTimeout(resolve,1000))
     while (!generatedImage) {
         const result = await getGeneration(predictions.urls.get);
 
